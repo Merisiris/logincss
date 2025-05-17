@@ -8,25 +8,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <title>Login</title>
+    <title>Regitre-se</title>
 </head>
 <body>
     <div class="login">
         <form action="#">
             <div class="login texto">
-                <h3>Seja bem-vindo(a)<span> de volta!</span></h3>
-                <p>Brilhe conosco, participe e torne-se estrela</p>
+                <h3>Seja <span>bem-vindo(a)!</span></h3>
+                <p>Novo por aqui? Registre-se!</p>
             </div>
             <div class="login inputs">
+                <input type="text" placeholder="Nome de usuário" id="username" >
                 <input type="text" placeholder="Digite seu email" id="email">
                 <input type="password" placeholder="Digite seu senha" id="password">
             </div>
             <div class="login registerText">
-                <p id="mensagem"></p>
-                <p>Não tem uma conta? <a href="/register.html">Crie uma agora!</a></p>
+                <p>Já possui uma conta? <a href="/index.html">Faça login agora!</a></p>
             </div>
             <div class="login button">
-                <button id="loginBtn" href="/success.index" onclick="login()">Entrar</button>
+                <button id="loginBtn" href="/success.index" onclick="registrar()">Regitre-se</button>
             </div>
         </form>
     </div>

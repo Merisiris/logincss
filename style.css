@@ -33,6 +33,10 @@ span {
     margin: 0;
 }
 
+.login.texto p {
+    color: black;
+}
+
 .login.inputs {
     padding: 0;
     padding: 0;
