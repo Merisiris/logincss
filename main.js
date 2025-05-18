@@ -1,10 +1,22 @@
+function validarEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex para validar o formato do email
+    return regex.test(email); // Retorna true se o email for válido, false caso contrário
+}
+
 function registrar() {
+    event.preventDefault(); // Previne o comportamento padrão do formulário
+
     const nomeUsuario = document.getElementById("username").value;
     const emailUsuario = document.getElementById("email").value;
     const senhaUsuario = document.getElementById("password").value;
 
     if (nomeUsuario === "" || emailUsuario === "" || senhaUsuario === "") { // Verifica se algum campo está vazio
         alert("Preencha todos os campos!"); // Exibe um alerta se algum campo estiver vazio
+        return;
+    }
+
+    if (!validarEmail(emailUsuario)) {
+        alert("Email inválido!"); // Exibe um alerta se o email for inválido
         return;
     }
 
@@ -22,11 +34,12 @@ function registrar() {
     document.getElementById("username").value = ""; // Limpa o campo de nome
     document.getElementById("email").value = ""; // Limpa o campo de email
     document.getElementById("password").value = ""; // Limpa o campo de senha
-
-    window.location.href = "index.html";
+    window.location.href = "/success.html"; // Redireciona para a página de sucesso
 }
 
 function login() {  
+    event.preventDefault();
+
     const emailUsuario = document.getElementById("email").value; // Obtém o email do campo de entrada
     const senhaUsuario = document.getElementById("password").value; // Obtém a senha do campo de entrada
 
@@ -44,7 +57,8 @@ function login() {
     if (usuarioEncontrado) { // Se o usuário foi encontrado
         msg.innerHTML = "Login realizado com sucesso!"; // Exibe mensagem de sucesso
         msg.style.color = "green"; // Altera a cor da mensagem para verde
-        window.location.href = "success.html";
+        console.log("Usuário autenticado, redirecionando...");
+        window.location.href = "/success.html"; // Deve redirecionar para a página de login de sucesso
     } else { // Se o usuário não foi encontrado
         msg.innerHTML = "Email ou senha incorretos!"; // Exibe mensagem de erro
         msg.style.color = "red"; // Altera a cor da mensagem para vermelho
